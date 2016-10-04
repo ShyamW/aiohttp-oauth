@@ -1,7 +1,6 @@
 # aiohttp-oauth
 
-Oauth middleware for your aiohttp app. Allows you to require logging in to
-an oauth app in order to get to your app.
+Oauth middleware for your aiohttp app. Provides Login functionality into your app.
 
 ## installation
 
@@ -18,7 +17,7 @@ your domain + `/auth/oauth_callback`
 
 
 ### basic
-During registration of your aiohttp app, just call the 
+During registration of your aiohttp app, just call the
 `add_oauth_middleware` and everything will be set up for you.
 ```python
 app = web.Application(loop=loop)
@@ -60,7 +59,7 @@ parameter.
 
 ### advanced
 
-This middleware requires aiohttp_session middleware. 
+This middleware requires aiohttp_session middleware.
 The `add_oauth_middleware` method adds that for you. If you would instead
 like to add it yourself you can add the githubauth middleware yourself.
 
@@ -77,7 +76,7 @@ app = web.Application(loop=loop, middlewares=[
                                   cookie_name=cookie_name,
                                   max_age=7200)),
     oauth_middleware(**kwargs),
-    # ... 
+    # ...
 ])
 # now add all your other handlers
 
